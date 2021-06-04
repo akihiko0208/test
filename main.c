@@ -1,13 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main(void) {
-        int a, b;
-        char* p = malloc(100);
-        printf("hello world.\n");
-        if (a == 0) {
-                return 1;
-        }
-        
-        return 0;
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+constexpr int SIZE = 10;
+
+int main()
+{
+    char *arr = new char[SIZE];
+
+    for(int i = 0; i < SIZE; ++i) {
+        arr[i] = (char)(65 + i);
+        cout << arr[i] << "; ";
+    }
+    cout << endl;
+
+    return EXIT_SUCCESS;
 }
