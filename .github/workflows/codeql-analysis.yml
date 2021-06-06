@@ -39,7 +39,7 @@ jobs:
 
     # Specify the container in which actions will run
     container:
-      image: mcr.microsoft.com/cstsectools/codeql-container:f0f91db
+      image: mcr.microsoft.com/cstsectools/codeql-container:latest
 
     steps:
     - name: Checkout repository
