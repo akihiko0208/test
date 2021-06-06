@@ -1,19 +1,12 @@
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
-using std::cout;
-using std::endl;
-
-constexpr int SIZE = 10;
-
-int main()
+int main(void)
 {
-    char *arr = new char[SIZE];
-
-    for(int i = 0; i < SIZE; ++i) {
-        arr[i] = (char)(65 + i);
-        cout << arr[i] << "; ";
-    }
-    cout << endl;
-
-    return EXIT_SUCCESS;
+    int *array1, *array2;
+    array1 = (int *)malloc(sizeof(int) * 100); // BAD: never freed
+    array2 = (int *)malloc(sizeof(int) * 100); // GOOD
+    free(array2);
+    return 0;
 }
+
