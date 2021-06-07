@@ -1,9 +1,12 @@
 #include <stdio.h>
-int main(void) {
-        int a, b;
-        printf("hello world.\n");
-        if (a == 0) {
-                return 1;
-        }
-        return 0;
+#include <stdlib.h>
+
+int main(void)
+{
+    int *array1, *array2;
+    array1 = (int *)malloc(sizeof(int) * 100); // BAD: never freed
+    array2 = (int *)malloc(sizeof(int) * 100); // GOOD
+    free(array2);
+    return 0;
 }
+
