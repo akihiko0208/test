@@ -42,6 +42,9 @@ jobs:
       image: mcr.microsoft.com/cstsectools/codeql-container:latest
 
     steps:
+    - name: Clean files
+      run:  rm -rf /__w/_temp/codeql_databases/cpp
+
     - name: Checkout repository
       uses: actions/checkout@v2
 
